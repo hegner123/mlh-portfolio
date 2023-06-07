@@ -2,20 +2,32 @@
 import anime from "animejs/lib/anime.es.js";
 import { useEffect, useState, useRef } from "react";
 export default function ComputerIcon() {
+  
   const svgRef = useRef(null);
   const pathRef = useRef<any>(null);
   const animeRef = useRef<any>(null);
-  const [xOffset, setXOffset] = useState(-100);
-  const [yOffset, setYOffset] = useState(-100);
-  const [scale, setScale] = useState(1);
-  const [windowSize, setWindowSize] = useState([0, 0]);
-  const windowSizeCurrent = useRef([window.innerWidth, window.innerHeight]);
-  const windowWidthMin = 100;
-  const windowHeightMin = 100;
+  const [dashOffset,setDashOffset] = useState(getCurrentDimension())
+  const [windowSize, setWindowSize] = useState(getCurrentDimension())
+ 
+ 
 
-  useEffect(() => {
-    setScale(windowSizeCurrent.current[0] / 1920);
-  }, [windowSizeCurrent]);
+  function getCurrentDimension(){
+    return {
+      	width: window.innerWidth,
+      	height: window.innerHeight
+    }
+}
+useEffect(() => {
+    const updateDimension = () => {
+      setWindowSize(getCurrentDimension())
+      setDashOffset(getCurrentDimension())
+    }
+    window.addEventListener('resize', updateDimension);
+    
+    return(() => {
+        window.removeEventListener('resize', updateDimension);
+    })
+  }, [windowSize])
 
   useEffect(() => {
     const path = pathRef.current;
@@ -34,7 +46,7 @@ export default function ComputerIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox={`${xOffset} ${yOffset} ${windowSize[0]} ${windowSize[1]}`}
+      viewBox={`${dashOffset.width / 400} ${(dashOffset.height - dashOffset.height * 2 ) / 2} ${windowSize.width} ${windowSize.height}`}
       className="col-span-full  absolute computer-icon -z-10 overflow-hidden"
       ref={svgRef}>
       <path
