@@ -1,8 +1,7 @@
 "use client";
 import anime from "animejs/lib/anime.es.js";
-import { useEffect, useState, useRef, use } from "react";
+import { useEffect, useState, useRef } from "react";
 export default function ComputerIcon() {
-  const [length, setLength] = useState(0);
   const svgRef = useRef(null);
   const pathRef = useRef<any>(null);
   const animeRef = useRef<any>(null);
