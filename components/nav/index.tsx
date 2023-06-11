@@ -9,18 +9,6 @@ export default function Navigation() {
             <h1 className="text-3xl">Michael Hegner</h1>
           </Link>
         </div>
-        <ul className="flex col-span-9 justify-end align-middle h-fit gap-3">
-          <li>
-            <Link className="link" href="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link className="link" href="/blog">
-              Blog
-            </Link>
-          </li>
-        </ul>
       </div>
     </nav>
   );

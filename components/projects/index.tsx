@@ -3,14 +3,14 @@ import Image from "next/image";
 import Fade from "react-reveal/Fade";
 export default function Projects() {
   return (
-    <article className="col-span-full h-[800px] grid items-center">
+    <article className="col-span-full section grid items-center">
       <div className="grid grid-cols-12 ">
         <Fade delay={200}>
           <div className="col-span-6 col-start-2">
             <h2 className="text-6xl">Projects</h2>
           </div>
           <div className="grid col-span-full grid-cols-12">
-            <div className="col-start-2 col-span-10 grid grid-cols-2 gap-4">
+            <div className="col-start-2 col-span-10 grid md:grid-cols-1 lg:grid-cols-2 gap-4">
               <div className="col-start-1 mt-14 ">
                 <h3 className="text-4xl ">Budget Forecaster</h3>
                 <p className="text-md mt-5">

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   Toolbar,
   Divider,
@@ -45,39 +46,38 @@ export default function DrawerComponent() {
     </div>
   );
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar position="fixed">
-        <Toolbar className="bg-black">
-          <IconButton
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}>
-            <MenuIcon />
-          </IconButton>
+    <Box sx={{ display: "flex" }} className="bg-transparent">
+      <AppBar position="fixed" sx={{ backgroundColor: "transparent" }}>
+        <Toolbar className=" backdrop-blur-sm  flex justify-between">
           <Typography variant="h6" noWrap component="div">
             Michael Hegner
           </Typography>
+          <IconButton edge="start" onClick={handleDrawerToggle}>
+            <MenuIcon className="hidden text-white" />
+          </IconButton>
+          <ul className="flex col-span-9 justify-end align-middle h-fit gap-3">
+            <li>
+              <Link className="link" href="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="link" href="/blog">
+                Blog
+              </Link>
+            </li>
+          </ul>
         </Toolbar>
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}>
         <Drawer
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
           }}>
           {drawer}
         </Drawer>
