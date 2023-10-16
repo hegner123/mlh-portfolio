@@ -1,18 +1,15 @@
 "use client";
 import Image from "next/image";
 import ComputerIcon from "../iconComponents/computer";
-import Fade from "react-reveal/Fade";
-export default function Hero() {
+import { HeroContent } from "mlh/types/heroContent";
+
+export default function Hero(content: HeroContent) {
   return (
-    <section className="grid grid-cols-12 col-span-full max-h-fit  ">
+    <section className="grid grid-cols-12 col-span-full max-h-fit ">
       <ComputerIcon />
-      <div className="col-span-4 col-start-2 grid items-center hero-section row-start-1">
-        <div>
-          <Fade delay={1500}>
-            <h2 className="text-6xl">Michael Hegner</h2>
-            <p className="text-md">Full stack developer.</p>
-          </Fade>
-        </div>
+      <h2 className="text-6xl text-white">{content?.heroTitle}</h2>
+      <div className="grid items-center col-span-4 col-start-2 row-start-1 ">
+        <p className="text-md">{content?.subtitle}</p>
       </div>
       <div className="col-span-6 col-start-7">{/* <ComputerIcon /> */}</div>
     </section>
