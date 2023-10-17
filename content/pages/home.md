@@ -1,7 +1,7 @@
 ---
 heroTitle: Michael Hegner
 subtitle: Full Stack Developer
-aboutTitle: About me
+aboutTitle: About
 aboutBio: >
   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore cumque
   illo quae eum explicabo necessitatibus dicta dolor sit? Fuga optio architecto
