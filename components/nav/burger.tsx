@@ -19,8 +19,9 @@ import {
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
-const drawerWidth = 240;
+const drawerWidth = 479;
 export default function DrawerComponent() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -28,16 +29,19 @@ export default function DrawerComponent() {
     setMobileOpen(!mobileOpen);
   };
   const drawer = (
-    <div>
+    <div className="w-full">
+      <IconButton
+        edge="end"
+        onClick={handleDrawerToggle}
+        className="flex pr-5 ml-auto">
+        <CloseIcon className="text-black md:hidden" />
+      </IconButton>
       <Toolbar />
 
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {["Home", "Projects", "Contact"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -46,42 +50,43 @@ export default function DrawerComponent() {
     </div>
   );
   return (
-    <Box sx={{ display: "flex" }} className="bg-transparent">
-      <AppBar position="fixed" sx={{ backgroundColor: "transparent" }}>
-        <Toolbar className=" backdrop-blur-sm  flex justify-between">
-          <Typography variant="h6" noWrap component="div">
-            Michael Hegner
-          </Typography>
-          <IconButton edge="start" onClick={handleDrawerToggle}>
-            <MenuIcon className="hidden text-white" />
-          </IconButton>
-          <ul className="flex col-span-9 justify-end align-middle h-fit gap-3">
-            <li>
-              <Link className="link" href="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className="link" href="/blog">
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </Toolbar>
-      </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}>
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}>
-          {drawer}
-        </Drawer>
-      </Box>
-    </Box>
+    <AppBar position="fixed" sx={{ backgroundColor: "transparent" }}>
+      <Toolbar
+        className="flex justify-between backdrop-blur-sm"
+        component={"nav"}>
+        <Typography variant="h6" noWrap component="div">
+          Michael Hegner
+        </Typography>
+        <IconButton edge="end" onClick={handleDrawerToggle} className="ml-auto">
+          <MenuIcon className="text-white md:hidden" />
+        </IconButton>
+        <ul className="justify-end hidden col-span-9 gap-3 align-middle md:flex h-fit">
+          <li>
+            <Link className="link" href="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link className="link" href="projects">
+              Projects
+            </Link>
+          </li>
+        </ul>
+        <Box
+          component="nav"
+          sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+          className="block md:hidden">
+          <Drawer
+            anchor="right"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}>
+            {drawer}
+          </Drawer>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }

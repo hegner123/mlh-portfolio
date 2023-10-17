@@ -44,7 +44,7 @@ export default function ComputerIcon() {
     <svg
       viewBox="0 0 2770 627"
       xmlns="http://www.w3.org/2000/svg"
-      className="col-span-full row-start-1 mt-20"
+      className="row-start-1 mt-20 pointer-events-none col-span-full"
       ref={svgRef}>
       <g>
         <title>Layer 1</title>

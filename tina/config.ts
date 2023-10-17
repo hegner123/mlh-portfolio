@@ -38,6 +38,27 @@ export default defineConfig({
             name: "subtitle",
             label: "Hero Subtitle",
           },
+          {
+            type: "string",
+            name: "aboutTitle",
+            label: "About Title",
+          },
+          { type: "rich-text", name: "aboutBio", label: "About Bio" },
+          { type: "string", name: "projectsTitle", label: "Projects Title" },
+          {
+            type: "object",
+            name: "project",
+            label: "Project",
+            list: true,
+
+            fields: [
+              { type: "string", name: "title", label: "Title" },
+              { type: "rich-text", name: "description", label: "Description" },
+              { type: "string", name: "siteLink", label: "Site Link" },
+              { type: "string", name: "githubLink", label: "Github Link" },
+              { type: "image", name: "image", label: "Image" },
+            ],
+          },
         ],
         format: "md",
       },
