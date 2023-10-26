@@ -46,6 +46,6 @@ project:
       accounting for subscriptions and necessities.
     siteLink: 'https://budgetplanner.io'
     githubLink: 'https://github.com/hegner123/budget-planing'
-    image: /budget.png
+    image: /budgetplanning-dashboard.png
 ---
 
