@@ -21,7 +21,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-const drawerWidth = 479;
+const drawerWidth = "100vw";
 export default function DrawerComponent() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -54,11 +54,14 @@ export default function DrawerComponent() {
       <Toolbar
         className="flex justify-between backdrop-blur-sm"
         component={"nav"}>
-        <Typography variant="h6" noWrap component="div">
-          Michael Hegner
+        <Typography variant="h6" noWrap component="h6" className="h-fit w-fit">
+          <Link href={"/"}>Michael Hegner</Link>
         </Typography>
-        <IconButton edge="end" onClick={handleDrawerToggle} className="ml-auto">
-          <MenuIcon className="text-white md:hidden" />
+        <IconButton
+          edge="end"
+          onClick={handleDrawerToggle}
+          className="ml-auto md:hidden">
+          <MenuIcon className="text-white " />
         </IconButton>
         <ul className="justify-end hidden col-span-9 gap-3 align-middle md:flex h-fit">
           <li>

@@ -40,7 +40,8 @@ export default function Projects(content: any) {
                 <Image
                   src={item.image}
                   alt="budget"
-                  fill={true}
+                  width={1600}
+                  height={900}
                   className="object-cover"
                 />
               </div>

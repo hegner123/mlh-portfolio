@@ -5,6 +5,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
+    domains: ['assets.tina.io'],
     remotePatterns: [
       {
         protocol: 'https',

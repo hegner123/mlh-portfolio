@@ -5,7 +5,7 @@ export default function About(content: any) {
   const aboutTitle = content.content.aboutTitle;
   const aboutBio = content.content.aboutBio;
   return (
-    <div className="col-span-10 col-start-2">
+    <div className="col-span-10 col-start-2 mb-5 md:mb-5">
       <h3 className="text-4xl text-white">{aboutTitle}</h3>
       <div className="mt-2 richTextWrapper">
         <TinaMarkdown content={aboutBio} />
