@@ -34,8 +34,7 @@ project:
     description: >
       I led development on this site redesign. NKFM had an aged website that
       needed significant improvements in both the aesthetic design and the UX.
-      This Wordpress website uses a custom theme based on the Genesis
-      framework. 
+      This Wordpress website uses a custom theme based on the Genesis framework.
     siteLink: 'https://nkfm.org/'
     image: /nkfm_org copy.png
 ---
