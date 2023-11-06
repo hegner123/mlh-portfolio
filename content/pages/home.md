@@ -23,6 +23,13 @@ aboutBio: >
   named Annie and Luna and I would love to travel to Japan one day.
 projectsTitle: Projects
 project:
+  - title: Budget Planner
+    description: >
+      A need I had was a way to calculate the results of my spending while
+      accounting for subscriptions and necessities.
+    siteLink: 'https://budgetplanner.io'
+    githubLink: 'https://github.com/hegner123/budget-planing'
+    image: /budgetplanning-dashboard.png
   - title: National Kidney Foundation of Michigan (NKFM)
     description: >
       I led development on this site redesign. NKFM had an aged website that
@@ -31,12 +38,5 @@ project:
       framework. 
     siteLink: 'https://nkfm.org/'
     image: /nkfm_org copy.png
-  - title: Budget Planner
-    description: >
-      A need I had was a way to calculate the results of my spending while
-      accounting for subscriptions and necessities.
-    siteLink: 'https://budgetplanner.io'
-    githubLink: 'https://github.com/hegner123/budget-planing'
-    image: /budgetplanning-dashboard.png
 ---
 
