@@ -6,7 +6,7 @@ export default function Projects(content: any) {
   const projectItems = content.content.project;
 
   return (
-    <article className="grid items-center col-span-full section">
+    <section className="grid items-center col-span-full section">
       <div className="grid grid-cols-12 ">
         <div className="col-span-6 col-start-2">
           <h2 className="text-6xl">{projectsTitle}</h2>
@@ -16,7 +16,7 @@ export default function Projects(content: any) {
             <li
               className="grid col-span-10 col-start-2 gap-4 md:grid-cols-1 lg:grid-cols-2"
               key={item.title}>
-              <div className="col-start-1 mt-14">
+              <article className="col-start-1 mt-14">
                 <h3 className="text-4xl ">{item.title}</h3>
                 <div className="mt-5 richTextWrapper text-md">
                   <TinaMarkdown content={item.description} />
@@ -35,7 +35,7 @@ export default function Projects(content: any) {
                     Github
                   </a>
                 </div>
-              </div>
+              </article>
               <div className="relative col-start-2 mt-14">
                 <Image
                   src={item.image}
@@ -49,6 +49,6 @@ export default function Projects(content: any) {
           ))}
         </ul>
       </div>
-    </article>
+    </section>
   );
 }
