@@ -52,9 +52,13 @@ export default function DrawerComponent() {
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "transparent" }}>
       <Toolbar
-        className="flex justify-between backdrop-blur-sm"
+        className="flex justify-between w-full backdrop-blur-sm"
         component={"nav"}>
-        <Typography variant="h6" noWrap component="h6" className="h-fit w-fit">
+        <Typography
+          variant="h6"
+          noWrap
+          component="h6"
+          className="h-fit min-w-fit">
           <Link href={"/"}>Michael Hegner</Link>
         </Typography>
         <IconButton
