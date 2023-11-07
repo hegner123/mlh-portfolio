@@ -6,7 +6,7 @@ export default function Projects(content: any) {
   const projectItems = content.content.project;
 
   return (
-    <section className="grid items-center col-span-full section">
+    <section id="projects" className="grid items-center col-span-full section">
       <div className="grid grid-cols-12 ">
         <div className="col-span-6 col-start-2">
           <h2 className="text-6xl">{projectsTitle}</h2>
@@ -28,12 +28,14 @@ export default function Projects(content: any) {
                     target="_blank">
                     Site
                   </a>
-                  <a
-                    className="block col-start-1 mt-5 text-lg border-b-2 border-b-blue-200 w-fit hover:border-b-blue-400"
-                    href={item.githubLink}
-                    target="_blank">
-                    Github
-                  </a>
+                  {item.githubLink && (
+                    <a
+                      className="block col-start-1 mt-5 text-lg border-b-2 border-b-blue-200 w-fit hover:border-b-blue-400"
+                      href={item.githubLink}
+                      target="_blank">
+                      Github
+                    </a>
+                  )}
                 </div>
               </article>
               <div className="relative col-start-2 mt-14">
