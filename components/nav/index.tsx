@@ -64,7 +64,7 @@ export default function Navigation() {
         <IconButton
           edge="end"
           onClick={handleDrawerToggle}
-          className="ml-auto md:hidden">
+          className="ml-auto burger">
           <MenuIcon className="text-white " />
         </IconButton>
         <ul className="justify-end hidden col-span-9 gap-3 align-middle md:flex h-fit">

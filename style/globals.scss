@@ -104,8 +104,8 @@ body {
   stroke: #fff;
 }
 
-@include media(gt-lg) {
-  .burger-display {
+@include media(gt-md) {
+  .burger {
     display: none !important;
   }
 }
