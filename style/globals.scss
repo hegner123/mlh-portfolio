@@ -109,3 +109,47 @@ body {
     display: none !important;
   }
 }
+
+$max-width:1920px;
+$grid-gap: 18px;
+$columns:12;
+$gaps: $columns+1;
+$gaps-total: $gaps*$grid-gap;
+$column-width: ($max-width - $gaps-total)/$columns;
+
+
+.content-layout {
+  display: grid;
+  grid-template-columns: $grid-gap 1fr $grid-gap;
+
+  @include media(gt-md) {
+    column-gap: $grid-gap;
+    grid-template-columns: $grid-gap repeat($columns, minmax(0, 1fr)) $grid-gap;
+  }
+
+  @include media(gt-xl) {
+    grid-column-gap: $grid-gap;
+    grid-template-columns: 1fr repeat($columns, $column-width) 1fr;
+
+  }
+
+
+}
+
+.content-span {
+  grid-column: 2/-2;
+}
+
+.main-nav {
+  padding: 0px;
+}
+
+.main-menu {
+
+
+  @include media(gt-md) {
+    display: flex;
+
+  }
+
+}

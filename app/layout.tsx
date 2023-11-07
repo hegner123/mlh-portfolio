@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.className} grid grid-cols-12 min-h-[100vh] `}>
+        className={`${openSans.className} grid content-layout min-h-[100vh] `}>
         <Navigation />
         {children}
         <Footer />

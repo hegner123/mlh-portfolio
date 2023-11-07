@@ -50,24 +50,27 @@ export default function Navigation() {
     </div>
   );
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "transparent" }}>
+    <AppBar
+      position="fixed"
+      sx={{ backgroundColor: "transparent" }}
+      className="content-layout content-span">
       <Toolbar
-        className="flex justify-between w-full backdrop-blur-sm"
+        className="w-full content-layout content-span backdrop-blur-sm main-nav"
         component={"nav"}>
         <Typography
           variant="h6"
           noWrap
           component="h6"
-          className="h-fit min-w-fit">
+          className="absolute left-0 h-fit min-w-fit md:left-6">
           <Link href={"/"}>Michael Hegner</Link>
         </Typography>
         <IconButton
           edge="end"
           onClick={handleDrawerToggle}
-          className="ml-auto burger">
+          className="absolute right-0 ml-auto burger md:right-6">
           <MenuIcon className="text-white " />
         </IconButton>
-        <ul className="justify-end hidden col-span-9 gap-3 align-middle md:flex h-fit">
+        <ul className="absolute justify-end hidden col-span-9 gap-3 align-middle right-6 h-fit main-menu">
           <li>
             <Link className="link" href="/">
               Home

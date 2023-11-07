@@ -12,7 +12,7 @@ export default async function Home(props: any) {
   const data = page.data.pages;
 
   return (
-    <main className="grid grid-cols-12 pt-20 col-span-full">
+    <main className="pt-20 content-layout col-span-full">
       <Hero content={data} />
       <About content={data} />
       <Projects content={data} />

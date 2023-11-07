@@ -7,16 +7,14 @@ export default function Projects(content: any) {
 
   return (
     <section id="projects" className="grid items-center col-span-full section">
-      <div className="grid grid-cols-12 ">
-        <div className="col-span-6 col-start-2">
-          <h2 className="text-6xl">{projectsTitle}</h2>
+      <div className="content-layout col-span-full">
+        <div className="content-layout col-span-full">
+          <h2 className="text-6xl content-span">{projectsTitle}</h2>
         </div>
-        <ul className="grid grid-cols-12 col-span-full">
+        <ul className="content-layout col-span-full">
           {projectItems.map((item: any) => (
-            <li
-              className="grid col-span-10 col-start-2 gap-4 md:grid-cols-1 lg:grid-cols-2"
-              key={item.title}>
-              <article className="col-start-1 mt-14">
+            <li className="content-layout col-span-full " key={item.title}>
+              <article className="content-span lg:col-span-5 lg:col-start-2 mt-14">
                 <h3 className="text-4xl ">{item.title}</h3>
                 <div className="mt-5 richTextWrapper text-md">
                   <TinaMarkdown content={item.description} />
@@ -38,13 +36,13 @@ export default function Projects(content: any) {
                   )}
                 </div>
               </article>
-              <div className="relative col-start-2 mt-14">
+              <div className="relative mt-14 lg:col-span-5 lg:col-start-8 content-span">
                 <Image
                   src={item.image}
                   alt="budget"
                   width={1600}
                   height={900}
-                  className="object-cover"
+                  className="object-cover p-2"
                 />
               </div>
             </li>
