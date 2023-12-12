@@ -7,7 +7,7 @@ export default function Hero(content: any) {
   const subtitle = content.content.subtitle;
 
   return (
-    <section className="relative content-layout grid-rows-5 col-span-full md:h-[800px] ">
+    <section className="relative content-layout grid-rows-5 col-span-full md:h-[800px] z-10">
       <div className="absolute top-0 left-0 z-0 w-full h-auto pointer-events-none">
         <ComputerIcon />
       </div>

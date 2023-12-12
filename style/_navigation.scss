@@ -1,0 +1,18 @@
+.mobile-container {
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    background: white;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.open-false {
+    transform: translateX(100vw);
+}
+
+.open-true {
+    transform: translateX(50vw);
+}

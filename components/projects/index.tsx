@@ -6,7 +6,9 @@ export default function Projects(content: any) {
   const projectItems = content.content.project;
 
   return (
-    <section id="projects" className="grid items-center col-span-full section">
+    <section
+      id="projects"
+      className="z-10 grid items-center col-span-full section">
       <div className="content-layout col-span-full">
         <div className="content-layout col-span-full">
           <h2 className="text-6xl content-span">{projectsTitle}</h2>
