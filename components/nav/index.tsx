@@ -49,28 +49,20 @@ export default function Navigation() {
       </List>
     </div>
   );
+
   return (
-    <AppBar
-      position="fixed"
-      sx={{ backgroundColor: "transparent" }}
-      className="content-layout content-span">
-      <Toolbar
-        className="w-full content-layout content-span backdrop-blur-sm main-nav"
-        component={"nav"}>
-        <Typography
-          variant="h6"
-          noWrap
-          component="h6"
-          className="absolute left-0 h-fit min-w-fit md:left-6">
+    <div className="fixed top-0 w-full bg-transparent backdrop-blur-sm content-layout h-fit col-span-full">
+      <nav className="w-full pt-4 pb-4 content-layout content-span main-nav h-fit">
+        <h6 className="relative left-0 h-fit min-w-max">
           <Link href={"/"}>Michael Hegner</Link>
-        </Typography>
+        </h6>
         <IconButton
           edge="end"
           onClick={handleDrawerToggle}
-          className="absolute right-0 ml-auto burger md:right-6">
+          className="relative right-0 ml-auto burger md:right-6">
           <MenuIcon className="text-white " />
         </IconButton>
-        <ul className="absolute justify-end hidden col-span-9 gap-3 align-middle right-6 h-fit main-menu">
+        <ul className="relative justify-end hidden col-span-9 gap-3 align-middle right-6 h-fit main-menu">
           <li>
             <Link className="link" href="/">
               Home
@@ -86,17 +78,9 @@ export default function Navigation() {
           component="nav"
           sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
           className="block md:hidden">
-          <Drawer
-            anchor="right"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}>
-            {drawer}
-          </Drawer>
+          <div>{drawer}</div>
         </Box>
-      </Toolbar>
-    </AppBar>
+      </nav>
+    </div>
   );
 }

@@ -11,7 +11,7 @@ export default function Projects(content: any) {
         <div className="content-layout col-span-full">
           <h2 className="text-6xl content-span">{projectsTitle}</h2>
         </div>
-        <ul className="content-layout col-span-full">
+        <ul className="col-span-full md:col-start-3 md:col-end-[-3] content-layout">
           {projectItems.map((item: any) => (
             <li className="content-layout col-span-full " key={item.title}>
               <article className="content-span lg:col-span-5 lg:col-start-2 mt-14">
