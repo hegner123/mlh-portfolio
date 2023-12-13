@@ -11,7 +11,7 @@ export default function Projects(content: any) {
       className="z-10 grid items-center col-span-full section">
       <div className="content-layout col-span-full">
         <div className="content-layout col-span-full">
-          <h2 className="text-6xl content-span">{projectsTitle}</h2>
+          <h3 className="text-6xl content-span">{projectsTitle}</h3>
         </div>
         <ul className="col-span-full md:col-start-3 md:col-end-[-3] content-layout">
           {projectItems.map((item: any) => (

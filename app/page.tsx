@@ -3,6 +3,7 @@ import Hero from "mlh/components/hero";
 import ComputerIcon from "mlh/components/iconComponents/computer";
 import About from "mlh/components/about";
 import Projects from "mlh/components/projects";
+import ContactSection from "mlh/components/contact";
 import { HeroContent } from "mlh/types/heroContent";
 
 import client from "mlh/tina/__generated__/client";
@@ -16,6 +17,7 @@ export default async function Home(props: any) {
       <Hero content={data} />
       <About content={data} />
       <Projects content={data} />
+      <ContactSection />
     </main>
   );
 }
